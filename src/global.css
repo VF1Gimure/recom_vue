@@ -1,0 +1,21 @@
+/* src/global.css */
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.highlight-button {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+.page-title {
+    text-align: center;
+    margin-top: 50px;
+}

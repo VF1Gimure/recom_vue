@@ -1,0 +1,53 @@
+/* src/styles/LibraryList.css */
+
+.library-list {
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.library-list h3 {
+    font-size: 1.2em;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.library-list ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.library-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.library-item:hover {
+    background-color: #e0e0e0; /* Light gray background on hover */
+}
+
+.game-name {
+    flex: 0 0 30%;
+    font-weight: bold;
+    color: #333;
+    padding-left: 10px;
+}
+
+.weighted-rating {
+    flex: 0 0 70%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #777;
+}
+
+.error-message {
+    color: #d9534f;
+    font-size: 0.9em;
+    margin-top: 10px;
+}
+

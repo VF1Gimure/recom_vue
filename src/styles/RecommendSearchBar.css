@@ -1,0 +1,15 @@
+/* src/styles/RecommendSearchBar.css */
+
+.search-bar {
+    display: flex;
+    align-items: center;
+}
+
+.search-button {
+    margin-left: 10px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
