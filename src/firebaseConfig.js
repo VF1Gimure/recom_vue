@@ -5,7 +5,7 @@ import { initializeApp } from "firebase/app";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
-    apiKey: "AIzaSyCK43vkK0z2_OyUKczj4_i4gMBK1zuEixc",
+    apiKey: process.env.VUE_APP_FIREBASE_API_KEY,
     authDomain: "recommendsvd.firebaseapp.com",
     databaseURL: "https://recommendsvd-default-rtdb.firebaseio.com",
     projectId: "recommendsvd",
