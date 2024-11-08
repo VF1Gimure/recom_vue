@@ -1,12 +1,16 @@
 <template>
   <div class="library-list">
     <h3>Library</h3>
-    <ul>
+    <button v-show="!isExpanded" @click="isExpanded = true" class="expand-button">
+      Show
+    </button>
+    <ul v-if="isExpanded">
       <li v-for="game in library" :key="game.key" class="library-item">
         <span class="game-name">{{ game.app_name }}</span>
         <span class="weighted-rating">Weighted Rating: {{ game.weighted_rating }}</span>
       </li>
     </ul>
+    <p v-if="errorMessage" class="error-message">{{ errorMessage }}</p>
   </div>
 </template>
 
@@ -23,7 +27,8 @@ export default {
   data() {
     return {
       library: [],
-      errorMessage: ''
+      errorMessage: '',
+      isExpanded: false
     };
   },
   async created() {

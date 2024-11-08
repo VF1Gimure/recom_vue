@@ -1,17 +1,18 @@
 /* src/styles/LibraryList.css */
-
 .library-list {
     margin-top: 20px;
     padding: 10px;
     background-color: #f9f9f9;
 }
 
+/* Header Styling */
 .library-list h3 {
     font-size: 1.2em;
     color: #333;
     margin-bottom: 10px;
 }
 
+/* List and Item Styling */
 .library-list ul {
     list-style-type: none;
     padding: 0;
@@ -23,13 +24,14 @@
     align-items: center;
     padding: 10px;
     border-bottom: 1px solid #ddd;
-    transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+    transition: background-color 0.3s ease;
 }
 
 .library-item:hover {
-    background-color: #e0e0e0; /* Light gray background on hover */
+    background-color: #e0e0e0;
 }
 
+/* Game Name and Rating Styling */
 .game-name {
     flex: 0 0 30%;
     font-weight: bold;
@@ -45,6 +47,28 @@
     color: #777;
 }
 
+/* Button Styling - Similar to Search Button */
+.expand-button {
+    width: 10%;
+    padding: 15px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    background-color: #3498db;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.2s ease-in-out;
+    margin-top: 15px; /* Spacing from the library header */
+}
+
+/* Hover Effect for the Expand Button */
+.expand-button:hover {
+    background-color: #2980b9;
+}
+
+/* Error Message Styling */
 .error-message {
     color: #d9534f;
     font-size: 0.9em;

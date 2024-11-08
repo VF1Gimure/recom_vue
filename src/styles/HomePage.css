@@ -1,6 +1,15 @@
 /* src/styles/HomePage.css */
-
 .home-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 10vh;
     text-align: center;
-    margin-top: 50px;
+}
+
+.search-container {
+    max-width: 600px; /* Optional: to control the width */
+    width: 100%;
+    margin: 20px auto; /* Centering and spacing */
 }

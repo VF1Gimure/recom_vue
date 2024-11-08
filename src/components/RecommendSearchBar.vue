@@ -1,8 +1,9 @@
 <template>
-  <div class="search-bar">
+  <div class="search-bar-container">
     <input
         type="text"
-        placeholder="Enter Account ID..."
+        class="search-input"
+        placeholder="Enter Account ID (e.g., 2398)..."
         v-model="accountId"
     />
     <button class="search-button" @click="checkLibrary">Get Recommendations</button>
@@ -16,8 +17,8 @@ import { checkUserLibrary } from '@/services/firebaseService';
 export default {
   data() {
     return {
-      accountId: '', // User input for the account ID
-      errorMessage: '' // Message to display if no user data is found
+      accountId: '',
+      errorMessage: ''
     };
   },
   methods: {
@@ -28,18 +29,13 @@ export default {
       }
 
       try {
-        // Check if user library exists
         const libraryData = await checkUserLibrary(this.accountId);
 
         if (!libraryData) {
           this.errorMessage = "No data found for this Account ID.";
         } else {
-          // Reset error message and navigate to Recommend page
           this.errorMessage = "";
-          this.$router.push({
-            name: 'Recommend',
-            query: { accountId: this.accountId }
-          });
+          this.$router.push({ name: 'Recommend', query: { accountId: this.accountId } });
         }
       } catch (error) {
         this.errorMessage = "Error fetching user data.";
@@ -49,6 +45,5 @@ export default {
   }
 };
 </script>
-
 <style src="../styles/RecommendSearchBar.css"></style>
 
