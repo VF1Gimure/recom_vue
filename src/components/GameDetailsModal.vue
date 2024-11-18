@@ -12,7 +12,7 @@
       <p><strong>Release Date:</strong> {{ game.release_date }}</p>
       <p><strong>Sentiment:</strong> {{ game.sentiment }}</p>
       <p><strong>Specs:</strong> {{ game.specs.join(', ') }}</p>
-      <a :href="game.reviews_url" target="_blank">Read Reviews</a>
+      <a :href="game.url" target="_blank">Steam Page</a>
     </div>
   </div>
 </template>

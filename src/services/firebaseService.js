@@ -1,6 +1,6 @@
 // src/services/firebaseService.js
 import { app } from "@/firebaseConfig";
-import { ref, get } from "firebase/database";
+import { ref, get, push } from "firebase/database";
 import { getDatabase } from "firebase/database";
 
 export async function checkUserLibrary(accountId) {
@@ -102,6 +102,32 @@ export async function fetchLibraryWithGameData(accountId) {
     } catch (error) {
         console.error("Error fetching library and game data:", error);
         throw new Error("Error fetching library data");
+    }
+}
+export async function submitRating(accountId, rating) {
+    try {
+        // Basic check for rating value
+        if (!rating || rating < 1 || rating > 5) {
+            return Promise.reject(new Error("Invalid rating. Must be between 1 and 5."));
+        }
+
+        const db = getDatabase(app);
+        const ratingsRef = ref(db, "ratings");
+
+        // Prepare the rating data
+        const ratingEntry = {
+            user_id: parseInt(accountId, 10), // Ensure user_id is an integer
+            date: new Date().toISOString(),
+            rating: rating,
+        };
+
+        // Push the rating data to Firebase
+        const newRatingRef = await push(ratingsRef, ratingEntry);
+        console.log(`Rating submitted with key: ${newRatingRef.key}`);
+        return newRatingRef.key; // Return the key for reference if needed
+    } catch (error) {
+        console.error("Error submitting rating:", error);
+        throw new Error("Failed to submit rating");
     }
 }
 
